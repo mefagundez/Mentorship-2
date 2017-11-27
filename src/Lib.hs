@@ -17,18 +17,18 @@ isqrt 1 = 1
 isqrt n = head $ dropWhile (\x -> x*x > n) $ iterate (\x -> (x + n `div` x) `div` 2) (n `div` 2)
 
 isEven :: Int -> Bool
-isEven = even -- TODO:
+isEven even = (even `mod` 2) == 0
 
 isOdd :: Int -> Bool
-isOdd = odd -- TODO:
+isOdd odd = (odd `mod` 2) /= 0
 
-myTuple = () -- TODO:
+myTuple = ("Hola", "Mundo", "Funcional")
 
-evenList = [1..] -- TODO:
+evenList = [x | x <- [1..], isEven x]
 
-oddList = [1..] -- TODO:
+oddList = [x | x <- [1..], isOdd x]
 
-primeList = [1..] -- TODO:
+primeList = [x | x <- [1..], isPrime x]
 
 -- Examples of list initialization
 
